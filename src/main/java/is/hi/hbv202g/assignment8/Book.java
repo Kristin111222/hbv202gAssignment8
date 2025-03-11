@@ -15,9 +15,9 @@ public class Book {
         
     }
 
-    public Book(String title, List<Author> authors) throws EmptyAuthorListExeption{
+    public Book(String title, List<Author> authors) throws EmptyAuthorListException{
         if (authors.isEmpty()) {
-            throw new EmptyAuthorListExeption("Author list is empty");
+            throw new EmptyAuthorListException("Author list is empty");
         }
      {
         this.title = title;
@@ -29,9 +29,9 @@ public class Book {
         return authors;
     }
 
-    public void setAuthors(List<Author> authors) throws EmptyAuthorListExeption{
+    public void setAuthors(List<Author> authors) throws EmptyAuthorListException{
         if (authors.isEmpty()) {
-            throw new EmptyAuthorListExeption("Author list is empty");}
+            throw new EmptyAuthorListException("Author list is empty");}
         this.authors = authors;
     }
 
