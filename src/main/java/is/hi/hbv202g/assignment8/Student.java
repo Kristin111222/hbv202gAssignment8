@@ -1,6 +1,4 @@
-package is.hi.hbv202g;
-
-import is.hi.hbv202g.assignment8.User;
+package is.hi.hbv202g.assignment8;
 
 public class Student extends User {
     private Boolean feePaid;
