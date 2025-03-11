@@ -17,11 +17,12 @@ public class Book {
 
     public Book(String title, List<Author> authors) throws EmptyAuthorListExeption{
         if (authors.isEmpty()) {
-            throw new EmptyAuthorListExeption("Author list is empty");}
-    }
+            throw new EmptyAuthorListExeption("Author list is empty");
+        }
      {
         this.title = title;
         this.authors = authors;
+    }
     }
 
     public List<Author> getAuthors() {
@@ -32,7 +33,6 @@ public class Book {
         if (authors.isEmpty()) {
             throw new EmptyAuthorListExeption("Author list is empty");}
         this.authors = authors;
-        
     }
 
     public void addAuthor(Author author) {
