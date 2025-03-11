@@ -11,7 +11,7 @@ public abstract class User {
         return name;
     }
     
-    public void setName(String newName){
-        name = newName;
+    public void setName(String name){
+        name = name;
     }
 }
