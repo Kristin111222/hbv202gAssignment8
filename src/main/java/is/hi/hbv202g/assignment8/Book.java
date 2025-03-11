@@ -12,7 +12,7 @@ public class Book {
     public Book(String title, String authorName) {
         this.title = title;
         this.authors = new ArrayList<Author>();
-        
+        this.authors.add(new Author(authorName));
     }
 
     public Book(String title, List<Author> authors) throws EmptyAuthorListException{
