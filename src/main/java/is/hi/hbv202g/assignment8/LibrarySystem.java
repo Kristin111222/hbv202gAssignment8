@@ -52,16 +52,26 @@ public class LibrarySystem {
         return users.stream().filter(u -> u.getName().equals(name)).findFirst().orElse(null);
     }
 
-    public void borrowBook(User user, Book book){
+    public void borrowBook(User user, Book book) throws UserOrBookDoesNotExistException {
+        if(user ==null || book == null){
+            throw new UserOrBookDoesNotExistException("User or book does not exist");
+        }
+    { 
         lendings.add(new Lending(book, user));
     }
+}
 
     public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate){
         lendings.stream().filter(l -> l.getBook().equals(book) && l.getUser().equals(facultyMember)).findFirst().ifPresent(l -> l.setDueDate(newDueDate));
     }
 
-    public void returnBook(User user, Book book){
+    public void returnBook(User user, Book book) throws UserOrBookDoesNotExistException{
+        if(user ==null || book == null){
+            throw new UserOrBookDoesNotExistException("User or book does not exist");
+        }
+        {
         lendings.removeIf(l -> l.getBook().equals(book) && l.getUser().equals(user));
     }
+}
 }
 
