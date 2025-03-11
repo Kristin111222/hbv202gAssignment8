@@ -12,16 +12,20 @@ public class LibrarySystem {
     
     public LibrarySystem(){
         lendings = new ArrayList<Lending>();
-        users = new ArrayList<User>();
         books = new ArrayList<Book>();
+        users = new ArrayList<User>();
     }
 
     public void addBookWithTitleAndNameOfSingleAuthor(String title, String authorName){
         books.add(new Book(title, authorName));
     }
 
-    public void addBookWithTitleAndAuthorList(String title, List<Author> authors){
+    public void addBookWithTitleAndAuthorList(String title, List<Author> authors) throws EmptyAuthorListExeption{
+        if(authors.isEmpty()){
+            throw new EmptyAuthorListExeption("Author list is empty");
+    }{
         books.add(new Book(title, authors));
+    }
     }
 
     public void addStudentUser(String name, boolean feePaid){   
@@ -32,11 +36,19 @@ public class LibrarySystem {
         users.add(new FacultyMember(name, department));
     }
 
-    public Book findBookByTitle(String title){
+    public Book findBookByTitle(String title) throws UserOrBookDoesNotExistException {
+        if(books.stream().filter(b -> b.getTitle().equals(title)).findFirst().orElse(null) == null){
+            throw new UserOrBookDoesNotExistException("Book does not exist");
+    }{ 
         return books.stream().filter(b -> b.getTitle().equals(title)).findFirst().orElse(null);
     }
+    }
 
-    public User findUserByName(String name){    
+    public User findUserByName(String name) throws UserOrBookDoesNotExistException {
+        if(users.stream().filter(u -> u.getName().equals(name)).findFirst().orElse(null) == null){
+            throw new UserOrBookDoesNotExistException("User does not exist");
+    }{
+    }    
         return users.stream().filter(u -> u.getName().equals(name)).findFirst().orElse(null);
     }
 
