@@ -20,9 +20,9 @@ public class LibrarySystem {
         books.add(new Book(title, authorName));
     }
 
-    public void addBookWithTitleAndAuthorList(String title, List<Author> authors) throws EmptyAuthorListExeption{
+    public void addBookWithTitleAndAuthorList(String title, List<Author> authors) throws EmptyAuthorListException{
         if(authors.isEmpty()){
-            throw new EmptyAuthorListExeption("Author list is empty");
+            throw new EmptyAuthorListException("Author list is empty");
     }{
         books.add(new Book(title, authors));
     }
