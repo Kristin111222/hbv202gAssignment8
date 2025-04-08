@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibrarySystem {
+public class LibrarySystem extends Notify{
 
     private List<Lending> lendings;
     private List<User> users;
@@ -29,11 +29,19 @@ public class LibrarySystem {
     }
 
     public void addStudentUser(String name, boolean feePaid){   
-        users.add(new Student(name, feePaid));
+        Student student = new Student(name, feePaid);
+        users.add(student);
+        if( student instanceof Observer){
+            attach((Observer) student);
+        }
     }
 
     public void addFacultyMemberUser(String name, String department){   
-        users.add(new FacultyMember(name, department));
+        FacultyMember facultyMember = new FacultyMember(name, department);
+        users.add(facultyMember);
+        if( facultyMember instanceof Observer){
+            attach((Observer) facultyMember);
+        }
     }
 
     public Book findBookByTitle(String title) throws UserOrBookDoesNotExistException {
@@ -58,6 +66,7 @@ public class LibrarySystem {
         }
     { 
         lendings.add(new Lending(book, user));
+        notifyObservers(user.getName() + " has borrowed " + book.getTitle());
     }
 }
 
@@ -71,6 +80,7 @@ public class LibrarySystem {
         }
         {
         lendings.removeIf(l -> l.getBook().equals(book) && l.getUser().equals(user));
+        notifyObservers(user.getName() + " has returned " + book.getTitle());
     }
 }
 }
