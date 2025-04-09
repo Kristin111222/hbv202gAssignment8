@@ -3,8 +3,9 @@ package is.hi.hbv202g.assignment8;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class LibrarySystem extends Notify{
+public class LibrarySystem extends Notify {
 
     private List<Lending> lendings;
     private List<User> users;
@@ -68,7 +69,7 @@ public class LibrarySystem extends Notify{
         lendings.add(new Lending(book, user));
         notifyObservers(user.getName() + " has borrowed " + book.getTitle());
     }
-}
+    }
 
     public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate){
         lendings.stream().filter(l -> l.getBook().equals(book) && l.getUser().equals(facultyMember)).findFirst().ifPresent(l -> l.setDueDate(newDueDate));
@@ -82,6 +83,25 @@ public class LibrarySystem extends Notify{
         lendings.removeIf(l -> l.getBook().equals(book) && l.getUser().equals(user));
         notifyObservers(user.getName() + " has returned " + book.getTitle());
     }
-}
+    }
+
+    public List<String> getAllBooks(){
+        List<String> lagaseinna = new ArrayList<>();
+        for(Book book: books){
+            String authors = book.getAuthors().stream()
+                            .map(Author::getName).collect(Collectors.joining(", "));
+
+            lagaseinna.add("Title: " + book.getTitle() + " Author: " + authors);
+        }
+        return lagaseinna;
+    }
+
+    public List<String> getAllUsers(){
+        List<String> lagaseinna = new ArrayList<>();
+        for(User user: users){
+            lagaseinna.add(user.getName());
+        }
+        return lagaseinna;    
+    }
 }
 
