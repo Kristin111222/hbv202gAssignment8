@@ -1,6 +1,6 @@
 package is.hi.hbv202g.assignment8;
 
-public class FacultyMember extends User{
+public class FacultyMember extends User implements Observer{
     
     private String department;
 
@@ -15,5 +15,10 @@ public class FacultyMember extends User{
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    @Override
+    public void update(String message) {
+        System.out.println("Faculty " + getName() + " received notification: " + message);
     }
 }

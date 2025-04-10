@@ -1,13 +1,135 @@
 package is.hi.hbv202g.assignment8;
 
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
  */
 public class Main
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws UserOrBookDoesNotExistException{
+        Scanner scanner = new Scanner(System.in);
         LibrarySystem myLibrarySystem = new LibrarySystem();
+        Boolean running = true;
+
+        while(running){
+            System.out.print("\n> ");
+            String input = scanner.nextLine().trim().toLowerCase();
+
+            switch (input) {
+                case "show library":
+                    printBooks(myLibrarySystem);
+                    break;
+                case "show users":
+                    printUsers(myLibrarySystem);
+                case "initialize library":
+                    initializeLibrary(myLibrarySystem);
+                    break;
+                case "add new user":
+                    addNewUser(myLibrarySystem);
+                    break;
+                case "borrow book":
+                    borrowBook(myLibrarySystem);
+                    break;
+                case "exit":
+                    running = false;
+                    System.out.println("Thank you for using our service!");
+                    break;
+                case "help":
+                    printHelp();
+                    break;
+                default:
+                    System.out.println("Unknown command. Type 'help' for a list of commands.");
+                    break;
+            }
+        }
     }
+
+    public static void printHelp(){
+        System.out.println("Available commands:");
+        System.out.println("show library - prints all books in the library");
+        System.out.println("show users - prints all users in the library");
+        System.out.println("initialize library - adds three books to the library");
+        System.out.println("add new user - adds a new user to the library");
+        System.out.println("borrow book - allows a user to borrow a book");
+        System.out.println("exit - exits the program");
+    }
+
+    public static void initializeLibrary(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException{
+       librarySystem.addBookWithTitleAndNameOfSingleAuthor("Pride and Prejudice", "Jane Austen");
+       librarySystem.addBookWithTitleAndNameOfSingleAuthor("The Lord Of the Rings", "J.R.R.Tolkien");
+       librarySystem.addBookWithTitleAndNameOfSingleAuthor("Little Women", "Louisa May Alcott");
+    }
+
+    public static void printBooks(LibrarySystem librarySystem){
+        List<String> bookList =librarySystem.getAllBooks();
+        if(bookList.isEmpty()){
+            System.out.println("There are no books in the library");
+        } else {
+            for (String book : bookList){
+                System.out.println(book);
+            }
+        }
+    }
+
+    public static void printUsers(LibrarySystem librarySystem){
+        List<String> userList =librarySystem.getAllUsers();
+        if(userList.isEmpty()){
+            System.out.println("There are no users in the library");
+        } else {
+            for (String user : userList){
+                System.out.println(user);
+            }
+        }
+    }
+
+   public static void addNewUser(LibrarySystem librarySystem){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is your name?");
+        String name = scanner.nextLine();
+        
+        System.out.println("Are you a student or a faculty member? Write s for student and f for faculty");
+        String userType = scanner.nextLine().trim().toLowerCase();
+
+        if(userType.equals("s")){
+            System.out.println("Have you paid your fees? Write yes or no");
+            String feePaid = scanner.nextLine().trim().toLowerCase();
+            if(feePaid.equals("yes")){
+                librarySystem.addStudentUser(name, true);
+            } else {
+                librarySystem.addStudentUser(name, false);
+            }
+        } else if(userType.equals("f")){
+            System.out.println("What is your department?");
+            String department = scanner.nextLine();
+            librarySystem.addFacultyMemberUser(name, department);
+        }
+   }
+
+   public static void borrowBook(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException{
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is your name?");        
+        String name = scanner.nextLine();
+
+        System.out.println("What is the title of the book you want to borrow?");
+        String title = scanner.nextLine();
+
+        librarySystem.borrowBook(librarySystem.findUserByName(name), librarySystem.findBookByTitle(title));
+   }
+
+   public static void returnBook(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException{
+        Scanner scanner = new Scanner(System.in);    
+
+        System.out.println("What is your name?");        
+        String name = scanner.nextLine();
+
+        System.out.println("What is the title of the book you want to return?");
+        String title = scanner.nextLine();
+
+        librarySystem.returnBook(librarySystem.findUserByName(name), librarySystem.findBookByTitle(title));
+   }
 }
