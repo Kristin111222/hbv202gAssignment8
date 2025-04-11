@@ -1,0 +1,1 @@
+ describe  where a pattern is used and what classes have which role in that pattern.
