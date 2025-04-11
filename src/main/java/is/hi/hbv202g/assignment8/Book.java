@@ -12,14 +12,13 @@ public class Book {
     public Book(String title, String authorName) {
         this.title = title;
         this.authors = new ArrayList<Author>();
-        
+        this.authors.add(new Author(authorName));
     }
 
-    public Book(String title, List<Author> authors) throws EmptyAuthorListExeption{
+    public Book(String title, List<Author> authors) throws EmptyAuthorListException{
         if (authors.isEmpty()) {
             throw new EmptyAuthorListExeption("Author list is empty");}
     }
-    {
         this.title = title;
         this.authors = authors;
     }
@@ -28,9 +27,9 @@ public class Book {
         return authors;
     }
 
-    public void setAuthors(List<Author> authors) throws EmptyAuthorListExeption{
+    public void setAuthors(List<Author> authors) throws EmptyAuthorListException{
         if (authors.isEmpty()) {
-            throw new EmptyAuthorListExeption("Author list is empty");}
+            throw new EmptyAuthorListException("Author list is empty");}
         this.authors = authors;
         
     }
