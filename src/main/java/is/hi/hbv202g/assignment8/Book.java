@@ -31,9 +31,10 @@ public class Book {
      */
     public Book(String title, List<Author> authors) throws EmptyAuthorListException{
         if (authors.isEmpty()) {
-            throw new EmptyAuthorListExeption("Author list is empty");}
-    }
-    {
+
+            throw new EmptyAuthorListException("Author list is empty");
+        }
+
         this.title = title;
         this.authors = authors;
     }
