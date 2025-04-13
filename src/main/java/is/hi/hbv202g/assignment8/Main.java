@@ -4,11 +4,16 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Hello world!
- *
+ * The main class for the library management system.
+ * Provides a text-based interface for interacting with the library system.
  */
 public class Main
 {
+    /**
+     * The main method for the library management system.
+     * @param args command line arguments
+     * @throws UserOrBookDoesNotExistException if user or book lookup fails
+     */
     public static void main( String[] args ) throws UserOrBookDoesNotExistException{
         Scanner scanner = new Scanner(System.in);
         LibrarySystem myLibrarySystem = new LibrarySystem();
@@ -47,6 +52,9 @@ public class Main
         }
     }
 
+    /**
+     * Prints a list of available commands
+     */
     public static void printHelp(){
         System.out.println("Available commands:");
         System.out.println("show library - prints all books in the library");
@@ -57,12 +65,21 @@ public class Main
         System.out.println("exit - exits the program");
     }
 
+    /**
+     * Initializes the library with three books
+     * @param librarySystem the library system
+     * @throws UserOrBookDoesNotExistException if book lookup fails
+     */
     public static void initializeLibrary(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException{
        librarySystem.addBookWithTitleAndNameOfSingleAuthor("Pride and Prejudice", "Jane Austen");
        librarySystem.addBookWithTitleAndNameOfSingleAuthor("The Lord Of the Rings", "J.R.R.Tolkien");
        librarySystem.addBookWithTitleAndNameOfSingleAuthor("Little Women", "Louisa May Alcott");
     }
 
+    /**
+     * Prints all books currently in the library
+     * @param librarySystem the library system instance
+     */
     public static void printBooks(LibrarySystem librarySystem){
         List<String> bookList =librarySystem.getAllBooks();
         if(bookList.isEmpty()){
@@ -74,6 +91,10 @@ public class Main
         }
     }
 
+    /**
+     * Prints all users currently in the library
+     * @param librarySystem the library system instance
+     */
     public static void printUsers(LibrarySystem librarySystem){
         List<String> userList =librarySystem.getAllUsers();
         if(userList.isEmpty()){
@@ -85,7 +106,11 @@ public class Main
         }
     }
 
-   public static void addNewUser(LibrarySystem librarySystem){
+   /**
+    * Adds a new user to the library
+    * @param librarySystem the library system
+    */
+    public static void addNewUser(LibrarySystem librarySystem){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What is your name?");
@@ -109,6 +134,10 @@ public class Main
         }
    }
 
+   /**
+    * Allows a user to borrow a book
+    * @param librarySystem the library system
+    */
    public static void borrowBook(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException{
         Scanner scanner = new Scanner(System.in);
 
@@ -121,6 +150,10 @@ public class Main
         librarySystem.borrowBook(librarySystem.findUserByName(name), librarySystem.findBookByTitle(title));
    }
 
+   /**
+    * Allows a user to return a book
+    * @param librarySystem the library system
+    */
    public static void returnBook(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException{
         Scanner scanner = new Scanner(System.in);    
 

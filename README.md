@@ -12,13 +12,20 @@
 - The LibrarySystem class stores books and provides the necesssary features for finding, borrowing, extending, and returning books.
 
 
+
+
+## [Pattern](/hbv202gAssignment8/src/site/markdown/pattern.md)
+## [UML vantar](/hbv202gAssignment8/src/site/markdown/documentation.md)
+## [Maven](/hbv202gAssignment8/src/site/markdown/maven.md)
+
+## [Github](/hbv202gAssignment8/src/site/markdown/github.md)
+
+
+
 ## [License](/hbv202gAssignment8/LICENCE)
 
 ## [POM](/hbv202gAssignment8/pom.xml)
 
-## [Maven](/hbv202gAssignment8/src/site/markdown/maven.md)
-
-## [Github](/hbv202gAssignment8/src/site/markdown/github.md)
 
 
 
@@ -49,24 +56,18 @@
 
 11. Design patterns (Observer)
 12. Refactor
-13. Jar file
-14. README.md
+
 
 
 
 
 - links to UML - markdown/uml.md or documentation?
-15. Javadoc comments<span style="color: yellow;"> 3rd person</span> 
 
-9. Once your project is complete, commit and push all changes to your GitHub repository
 
- ```bash
-LocalDate.now().plusDays(30);
- ```
 
- 17. describe  where a pattern is used and what classes have which role in that pattern. <span style="color: yellow;"> markdown/pattern</span> 
 
-18. Class and method names of the submitted solution need to be **exactly** the same 
-as in the UML class diagram in the assignment PDF. 
+
+
+
 
 
