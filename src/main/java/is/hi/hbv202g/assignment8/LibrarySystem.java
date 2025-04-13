@@ -24,6 +24,14 @@ public class LibrarySystem extends Notify {
         users = new ArrayList<User>();
     }
 
+    /**
+     * Adds a book to the library
+     * @param title the title of the book to be added
+     * @param authorName the name of the author of the book
+     */
+    public void addBookWithTitleAndNameOfSingleAuthor(String title, String authorName){
+        books.add(new Book(title, authorName));
+    }
 
 
     /**
