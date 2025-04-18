@@ -90,7 +90,7 @@ public class LibrarySystem extends Notify {
 
     /**
      * Finds a user by their name
-     * @param name
+     * @param name the name of the user to search for
      * @return the user object that matches the name
      * @throws UserOrBookDoesNotExistException
      */
@@ -101,6 +101,21 @@ public class LibrarySystem extends Notify {
     }    
         return users.stream().filter(u -> u.getName().equals(name)).findFirst().orElse(null);
     }
+
+    /**
+    * Finds a faculty member by their name
+    * @param name the name of the faculty member to search for
+    * @return the FacultyMember object that matches the name
+    * @throws UserOrBookDoesNotExistException 
+    */
+    public FacultyMember findFacultyMemberByName(String name) throws UserOrBookDoesNotExistException {
+        return users.stream()
+                    .filter(user -> user instanceof FacultyMember && user.getName().equals(name))
+                    .map(user -> (FacultyMember) user)
+                    .findFirst()
+                    .orElseThrow(() -> new UserOrBookDoesNotExistException("Faculty member does not exist"));
+    }
+
 
     public void borrowBook(User user, Book book) throws UserOrBookDoesNotExistException {
         if(user ==null || book == null){
@@ -131,22 +146,23 @@ public class LibrarySystem extends Notify {
      * @return a list of string, each string contains the title and author of the book
      */
     public List<String> getAllBooks(){
-        List<String> lagaseinna = new ArrayList<>();
+        List<String> formatedBooks = new ArrayList<>();
         for(Book book: books){
             String authors = book.getAuthors().stream()
                             .map(Author::getName).collect(Collectors.joining(", "));
 
-            lagaseinna.add("Title: " + book.getTitle() + " Author: " + authors);
+            formatedBooks.add("Title: " + book.getTitle() + " Author: " + authors);
         }
-        return lagaseinna;
+        return formatedBooks;
     }
 
     public List<String> getAllUsers(){
-        List<String> lagaseinna = new ArrayList<>();
+        List<String> formatedUsers = new ArrayList<>();
         for(User user: users){
-            lagaseinna.add(user.getName());
+            formatedUsers.add("Name: " + user.getName() );
         }
-        return lagaseinna;    
+        return formatedUsers;    
     }
 }
+
 
