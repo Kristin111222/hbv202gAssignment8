@@ -24,6 +24,14 @@ public class LibrarySystem extends Notify {
         users = new ArrayList<User>();
     }
 
+    /**
+     * Adds a book to the library
+     * @param title the title of the book to be added
+     * @param authorName the name of the author of the book
+     */
+    public void addBookWithTitleAndNameOfSingleAuthor(String title, String authorName){
+        books.add(new Book(title, authorName));
+    }
 
 
     /**
@@ -82,7 +90,7 @@ public class LibrarySystem extends Notify {
 
     /**
      * Finds a user by their name
-     * @param name
+     * @param name the name of the user to search for
      * @return the user object that matches the name
      * @throws UserOrBookDoesNotExistException
      */
@@ -95,7 +103,22 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Allows a user to borrow a book
+    * Finds a faculty member by their name
+    * @param name the name of the faculty member to search for
+    * @return the FacultyMember object that matches the name
+    * @throws UserOrBookDoesNotExistException 
+    */
+    public FacultyMember findFacultyMemberByName(String name) throws UserOrBookDoesNotExistException {
+        return users.stream()
+                    .filter(user -> user instanceof FacultyMember && user.getName().equals(name))
+                    .map(user -> (FacultyMember) user)
+                    .findFirst()
+                    .orElseThrow(() -> new UserOrBookDoesNotExistException("Faculty member does not exist"));
+    }
+
+
+  /**
+    * Allows a user to borrow a book
      * @param user the user who is borrowing the book
      * @param book the book that is being borrowed
      * @throws UserOrBookDoesNotExistException
@@ -141,14 +164,14 @@ public class LibrarySystem extends Notify {
      * @return a list of string, each string contains the title and author of the book
      */
     public List<String> getAllBooks(){
-        List<String> lagaseinna = new ArrayList<>();
+        List<String> formatedBooks = new ArrayList<>();
         for(Book book: books){
             String authors = book.getAuthors().stream()
                             .map(Author::getName).collect(Collectors.joining(", "));
 
-            lagaseinna.add("Title: " + book.getTitle() + " Author: " + authors);
+            formatedBooks.add("Title: " + book.getTitle() + " Author: " + authors);
         }
-        return lagaseinna;
+        return formatedBooks;
     }
 
     /**
@@ -156,11 +179,12 @@ public class LibrarySystem extends Notify {
      * @return a list of string, each string contains the name of the user
      */
     public List<String> getAllUsers(){
-        List<String> lagaseinna = new ArrayList<>();
+        List<String> formatedUsers = new ArrayList<>();
         for(User user: users){
-            lagaseinna.add(user.getName());
+            formatedUsers.add("Name: " + user.getName() );
         }
-        return lagaseinna;    
+        return formatedUsers;    
     }
 }
+
 

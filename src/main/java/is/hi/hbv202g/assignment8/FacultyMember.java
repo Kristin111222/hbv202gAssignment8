@@ -40,6 +40,6 @@ public class FacultyMember extends User implements Observer{
      */
     @Override
     public void update(String message) {
-        System.out.println("Faculty " + getName() + " received notification: " + message);
+        System.out.println("Faculty " + message);
     }
 }
