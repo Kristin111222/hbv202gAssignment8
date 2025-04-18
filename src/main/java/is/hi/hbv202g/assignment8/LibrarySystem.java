@@ -94,6 +94,12 @@ public class LibrarySystem extends Notify {
         return users.stream().filter(u -> u.getName().equals(name)).findFirst().orElse(null);
     }
 
+    /**
+     * Allows a user to borrow a book
+     * @param user the user who is borrowing the book
+     * @param book the book that is being borrowed
+     * @throws UserOrBookDoesNotExistException
+     */
     public void borrowBook(User user, Book book) throws UserOrBookDoesNotExistException {
         if(user ==null || book == null){
             throw new UserOrBookDoesNotExistException("User or book does not exist");
@@ -104,10 +110,22 @@ public class LibrarySystem extends Notify {
     }
     }
 
+    /**
+     * Extends the lending due date for a faculty member.
+     * @param facultyMember The faculty member extending the lending
+     * @param book The book that is being extended
+     * @param newDueDate The new due date
+     */
     public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate){
         lendings.stream().filter(l -> l.getBook().equals(book) && l.getUser().equals(facultyMember)).findFirst().ifPresent(l -> l.setDueDate(newDueDate));
     }
 
+    /**
+     * Allows a user to return a book
+     * @param user the user who is returning the book
+     * @param book the book that is being returned
+     * @throws UserOrBookDoesNotExistException 
+     */
     public void returnBook(User user, Book book) throws UserOrBookDoesNotExistException{
         if(user ==null || book == null){
             throw new UserOrBookDoesNotExistException("User or book does not exist");
@@ -133,6 +151,10 @@ public class LibrarySystem extends Notify {
         return lagaseinna;
     }
 
+    /**
+     * Returns a list of all the users in the library
+     * @return a list of string, each string contains the name of the user
+     */
     public List<String> getAllUsers(){
         List<String> lagaseinna = new ArrayList<>();
         for(User user: users){
