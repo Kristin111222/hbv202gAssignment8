@@ -40,7 +40,7 @@ public class Main {
                     addNewUser(myLibrarySystem);
                     break;
                 case "add book":
-                    addBook(myLibrarySystem);
+                    addNewBook(myLibrarySystem);
                     break;
                 case "borrow book":
                     borrowBook(myLibrarySystem);
@@ -157,7 +157,7 @@ public class Main {
      * 
      * @param librarySystem the library system
      */
-    public static void addBook(LibrarySystem librarySystem) {
+    public static void addNewBook(LibrarySystem librarySystem) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What is the title of the book you want to add?");
