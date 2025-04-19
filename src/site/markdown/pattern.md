@@ -3,7 +3,7 @@
 # Class: Observer
 - In Observer class, there is a method like this:
  ```bash
-- update(String message)
+update(String message)
  ```
 - this method gets called when something changes
 - Classes that implement Observer are Student and FacultyMember.
