@@ -15,7 +15,7 @@
 
 
 ## [Pattern](/hbv202gAssignment8/src/site/markdown/pattern.md)
-## [UML vantar](/hbv202gAssignment8/src/site/markdown/documentation.md)
+## [UML](/hbv202gAssignment8/src/site/markdown/documentation.md)
 ## [Maven](/hbv202gAssignment8/src/site/markdown/maven.md)
 
 ## [Github](/hbv202gAssignment8/src/site/markdown/github.md)
