@@ -1,7 +1,7 @@
 package is.hi.hbv202g.assignment8;
 /**
- * Represents a faculty member in the library system
- * A faculty member has a name and a department and can receive notifications
+ * Represents a faculty member in the library system.
+ * A faculty member has a name and a department and can receive notifications.
  */
 
 public class FacultyMember extends User implements Observer{
@@ -9,7 +9,8 @@ public class FacultyMember extends User implements Observer{
     private String department;
 
     /**
-     * Creates a new faculty member
+     * Creates a new faculty member.
+     * 
      * @param name the name of the faculty member
      * @param department the department the faculty member belongs to
      */
@@ -19,7 +20,8 @@ public class FacultyMember extends User implements Observer{
     }   
 
     /**
-     * Returns the department of the faculty member
+     * Returns the department of the faculty member.
+     * 
      * @return the department
      */
     public String getDepartment() {
@@ -27,7 +29,8 @@ public class FacultyMember extends User implements Observer{
     }
 
     /**
-     * Sets the department of the faculty member
+     * Sets the department of the faculty member.
+     * 
      * @param department the new department
      */
     public void setDepartment(String department) {
@@ -35,7 +38,8 @@ public class FacultyMember extends User implements Observer{
     }
 
     /**
-     * Receives a notification message
+     * Receives a notification message.
+     * 
      * @param message the notification message
      */
     @Override

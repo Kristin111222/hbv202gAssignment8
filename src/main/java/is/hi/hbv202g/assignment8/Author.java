@@ -1,14 +1,15 @@
 package is.hi.hbv202g.assignment8;
 
 /**
- * Represents a author of a book in the library system
+ * Represents a author of a book in the library system.
  */
 public class Author {
 
     private String name;
 
     /**
-     * Constructor
+     * Constructor.
+     * 
      * @param name the name of the author
      */
     public Author(String name){
@@ -16,7 +17,8 @@ public class Author {
     }
 
     /**
-     * Returns the name of the author
+     * Returns the name of the author.
+     * 
      * @return the author´s name
      */
     public String getName(){
@@ -24,7 +26,8 @@ public class Author {
     }
 
     /**
-     * Sets the name of the author
+     * Sets the name of the author.
+     * 
      * @param name the new name of the author
      */
     public void setName(String name){

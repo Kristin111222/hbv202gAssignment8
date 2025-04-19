@@ -1,6 +1,11 @@
 # University Library System
 ## The goal of this assignment is to implement the backend of a simplified university library system which would handle the lending process of books, extend lending for faculty members and more. The backend will then be used by classes implementing authenication and a user interface.
-## Java and Visual Studio code app are used in this assignment
+
+## Technologies Used
+- Java (programming language)
+- Git (version control)
+- Visual Studio Code (code editor)
+
 
 
 
