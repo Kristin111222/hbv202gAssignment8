@@ -19,7 +19,7 @@
 
 
 
-## [Pattern](/hbv202gAssignment8/hbv202gAssignment8/src/site/markdown/pattern.md)
+## [Pattern](/src/site/markdown/pattern.md)
 ## [UML](/hbv202gAssignment8/src/site/markdown/documentation.md)
 ## [Maven](/hbv202gAssignment8/src/site/markdown/maven.md)
 
