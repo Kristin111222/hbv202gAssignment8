@@ -20,7 +20,7 @@ Without the Observer pattern, you'd have to manually tell every user when a book
 
 #### Solution: 
 Create a new class called Observer.
-Any object that wants to "listen" for changes must register itself with the object that changes(the Observable).
+Any object that wants to "listen" for changes must register itself with the object that changes (the Observable).
 Observable object notifies all registered observing objects once it changes state, with a notification in Terminal.
 Observers: Users
 Notification can be like:
