@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents a book
+ * Represents a book.
  */
 public class Book {
     
@@ -13,7 +13,8 @@ public class Book {
     private List<Author> authors;
 
     /**
-     * Constructs a new book sith the given title and author
+     * Constructs a new book sith the given title and author.
+     * 
      * @param title the title of the book
      * @param authorName the name of the author
      */
@@ -24,7 +25,8 @@ public class Book {
     }
 
     /**
-     * Constructs a new book with a list of authors
+     * Constructs a new book with a list of authors.
+     * 
      * @param title the title of the book
      * @param authors the list of authors
      * @throws EmptyAuthorListException if the authors list is empty
@@ -40,7 +42,8 @@ public class Book {
     }
 
     /**
-     * Returns the list of authors of the book
+     * Returns the list of authors of the book.
+     * 
      * @return the list of authors
      */
     public List<Author> getAuthors() {
@@ -48,7 +51,8 @@ public class Book {
     }
 
     /**
-     * Sets the list of authors for the book
+     * Sets the list of authors for the book.
+     * 
      * @param authors
      * @throws EmptyAuthorListException
      */
@@ -60,7 +64,8 @@ public class Book {
     }
 
     /**
-     * Adds an author to the book´s list of authors
+     * Adds an author to the book´s list of authors.
+     * 
      * @param author the author to add
      */
     public void addAuthor(Author author) {
@@ -68,7 +73,8 @@ public class Book {
     }
 
     /**
-     * Returns the title of the book
+     * Returns the title of the book.
+     * 
      * @return the title
      */
     public String getTitle() {
@@ -76,7 +82,8 @@ public class Book {
     }
 
     /**
-     * Sets the title of the book
+     * Sets the title of the book.
+     * 
      * @param title the new title
      */
     public void setTitle(String title) {

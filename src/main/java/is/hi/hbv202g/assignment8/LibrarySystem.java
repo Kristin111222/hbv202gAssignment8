@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * Represents a library system, managing books, users, and lendings.
- * Extends the Notify class to implement the observer pattern
+ * Extends the Notify class to implement the observer pattern.
  */
 public class LibrarySystem extends Notify {
 
@@ -16,7 +16,7 @@ public class LibrarySystem extends Notify {
     private List<Book> books;
     
     /**
-     * Default constructor
+     * Default constructor.
      */
     public LibrarySystem(){
         lendings = new ArrayList<Lending>();
@@ -25,7 +25,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Adds a book to the library
+     * Adds a book to the library.
+     * 
      * @param title the title of the book to be added
      * @param authorName the name of the author of the book
      */
@@ -35,7 +36,8 @@ public class LibrarySystem extends Notify {
 
 
     /**
-     * Adds a book to the library
+     * Adds a book to the library.
+     * 
      * @param title the title of the book to be added
      * @param authors the list of authors of the book
      * @throws EmptyAuthorListException if the authors list is empty
@@ -49,7 +51,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Adds a new student user to the library
+     * Adds a new student user to the library.
+     * 
      * @param name the name of the student
      * @param feePaid feePaid wether the student has paid their fees
      */
@@ -62,7 +65,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Adds a new faculty member user to the library system
+     * Adds a new faculty member user to the library system.
+     * 
      * @param name the name of the faculty member
      * @param department the department the faculty member belongs to
      */
@@ -75,7 +79,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Finds a book by its title
+     * Finds a book by its title.
+     * 
      * @param title the title of the book to search for
      * @return the book object that matches the title
      * @throws UserOrBookDoesNotExistException
@@ -89,7 +94,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Finds a user by their name
+     * Finds a user by their name.
+     * 
      * @param name the name of the user to search for
      * @return the user object that matches the name
      * @throws UserOrBookDoesNotExistException
@@ -103,7 +109,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-    * Finds a faculty member by their name
+    * Finds a faculty member by their name.
+
     * @param name the name of the faculty member to search for
     * @return the FacultyMember object that matches the name
     * @throws UserOrBookDoesNotExistException 
@@ -118,7 +125,8 @@ public class LibrarySystem extends Notify {
 
 
   /**
-    * Allows a user to borrow a book
+    * Allows a user to borrow a book.
+
      * @param user the user who is borrowing the book
      * @param book the book that is being borrowed
      * @throws UserOrBookDoesNotExistException
@@ -135,6 +143,7 @@ public class LibrarySystem extends Notify {
 
     /**
      * Extends the lending due date for a faculty member.
+     * 
      * @param facultyMember The faculty member extending the lending
      * @param book The book that is being extended
      * @param newDueDate The new due date
@@ -144,7 +153,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Allows a user to return a book
+     * Allows a user to return a book.
+     * 
      * @param user the user who is returning the book
      * @param book the book that is being returned
      * @throws UserOrBookDoesNotExistException 
@@ -160,7 +170,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Returns a list of all the books in the library
+     * Returns a list of all the books in the library.
+     * 
      * @return a list of string, each string contains the title and author of the book
      */
     public List<String> getAllBooks(){
@@ -175,7 +186,8 @@ public class LibrarySystem extends Notify {
     }
 
     /**
-     * Returns a list of all the users in the library
+     * Returns a list of all the users in the library.
+     * 
      * @return a list of string, each string contains the name of the user
      */
     public List<String> getAllUsers(){

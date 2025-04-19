@@ -66,7 +66,7 @@ public class Main {
     }
 
     /**
-     * Prints a list of available commands
+     * Prints a list of available commands.
      */
     public static void printHelp() {
         System.out.println("Available commands:");
@@ -79,7 +79,7 @@ public class Main {
     }
 
     /**
-     * Initializes the library with three books
+     * Initializes the library with three books.
      * 
      * @param librarySystem the library system
      * @throws UserOrBookDoesNotExistException if book lookup fails
@@ -92,7 +92,7 @@ public class Main {
     }
 
     /**
-     * Prints all books currently in the library
+     * Prints all books currently in the library.
      * 
      * @param librarySystem the library system instance
      */
@@ -108,7 +108,7 @@ public class Main {
     }
 
     /**
-     * Prints all users currently in the library
+     * Prints all users currently in the library.
      * 
      * @param librarySystem the library system instance
      */
@@ -124,7 +124,7 @@ public class Main {
     }
 
     /**
-     * Adds a new user to the library
+     * Adds a new user to the library.
      * 
      * @param librarySystem the library system
      */
@@ -153,7 +153,7 @@ public class Main {
     }
 
     /**
-     * Adds a new book to the library
+     * Adds a new book to the library.
      * 
      * @param librarySystem the library system
      */
@@ -189,7 +189,7 @@ public class Main {
     }
 
     /**
-     * Allows a user to borrow a book
+     * Allows a user to borrow a book.
      * 
      * @param librarySystem the library system
      */
@@ -206,7 +206,7 @@ public class Main {
     }
 
     /**
-     * Allows a user to return a book
+     * Allows a user to return a book.
      * 
      * @param librarySystem the library system
      */
@@ -222,6 +222,11 @@ public class Main {
         librarySystem.returnBook(librarySystem.findUserByName(name), librarySystem.findBookByTitle(title));
     }
 
+    /**
+     * Allows a faculty member to extend a lending.
+     * 
+     * @param librarySystem the library system
+     */
     public static void extendLending(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException {
         Scanner scanner = new Scanner(System.in);
 

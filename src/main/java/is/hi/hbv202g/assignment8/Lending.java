@@ -3,7 +3,7 @@ package is.hi.hbv202g.assignment8;
 import java.time.LocalDate;
 
 /**
- * Represents a lending of a book to a user
+ * Represents a lending of a book to a user.
  */
 public class Lending {
     
@@ -12,7 +12,8 @@ public class Lending {
     private Book book;
     
     /**
-     * Constructs a new lending
+     * Constructs a new lending.
+     * 
      * @param book the book being borrowed
      * @param user the user borrowing the book
      */
@@ -23,7 +24,8 @@ public class Lending {
     }
 
     /**
-     * Gets the due date of the lending
+     * Gets the due date of the lending.
+     * 
      * @return the due date
      */
     public LocalDate getDueDate(){
@@ -31,7 +33,8 @@ public class Lending {
     }
 
     /**
-     * Sets the due date of the lending
+     * Sets the due date of the lending.
+     * 
      * @param dueDate the new due date
      */
     public void setDueDate(LocalDate dueDate){
@@ -39,7 +42,8 @@ public class Lending {
     }
 
     /**
-     * Gets the book that was lent
+     * Gets the book that was lent.
+     * 
      * @return the book
      */
     public Book getBook(){
@@ -47,7 +51,8 @@ public class Lending {
     }
 
     /**
-     * Sets the book that was lent
+     * Sets the book that was lent.
+     * 
      * @param book the book to set
      */
     public void setBook(Book book){
@@ -55,7 +60,8 @@ public class Lending {
     }
 
     /**
-     * Gets the user that borrowed the book
+     * Gets the user that borrowed the book.
+     * 
      * @return the user
      */
     public User getUser(){
@@ -63,7 +69,8 @@ public class Lending {
     }
     
     /**
-     * Sets the user who is borrowing the book
+     * Sets the user who is borrowing the book.
+     * 
      * @param user the user to set
      */
     public void setUser(User user){

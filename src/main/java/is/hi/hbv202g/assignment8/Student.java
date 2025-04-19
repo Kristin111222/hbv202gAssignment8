@@ -9,6 +9,7 @@ public class Student extends User implements Observer {
 
     /**
      * Constructor.
+     * 
      * @param name the name of the student
      * @param feePaid true if the student has paid their fees
      */
@@ -19,6 +20,7 @@ public class Student extends User implements Observer {
 
     /**
      * Checks if the student has paid their fees.
+     * 
      * @return true if the fee is paid
      */
     public Boolean isFeePaid(){
@@ -27,6 +29,7 @@ public class Student extends User implements Observer {
 
     /**
      * Sets the feePaid status for the student.
+     * 
      * @param feePaid true if the fee is paid
      */
     public void setFeePaid(Boolean feePaid) {
