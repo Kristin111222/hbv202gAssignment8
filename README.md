@@ -20,16 +20,16 @@
 
 
 ## [Pattern](/src/site/markdown/pattern.md)
-## [UML](/hbv202gAssignment8/src/site/markdown/documentation.md)
-## [Maven](/hbv202gAssignment8/src/site/markdown/maven.md)
+## [UML](/src/site/markdown/documentation.md)
+## [Maven](/src/site/markdown/maven.md)
 
-## [Github](/hbv202gAssignment8/src/site/markdown/github.md)
+## [Github](/src/site/markdown/github.md)
 
 
 
-## [License](/hbv202gAssignment8/LICENCE)
+## [License](/LICENCE)
 
-## [POM](/hbv202gAssignment8/pom.xml)
+## [POM](/pom.xml)
 
 
 
