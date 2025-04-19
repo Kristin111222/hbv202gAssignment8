@@ -56,14 +56,12 @@ How notificatiions work:
 -Users added are now attached as observers
 - When a student or faculty member is added, they´re also attached as observers if they implement the Observer interface.
 
-# Class: LibrarySystem
-### Methods and what they do:
--LibrarySystem extends Notify
--borrowBook and returnBook from the class LibrarySystem now notify observers
- ```bash
-notifyObservers(user.getName() + " has borrowed " + book.getTitle());
- ```
- - message with notification in the terminal when book is borrowed or returned
+# Class: LibrarySystem extends Notify
+
+- borrowBook and returnBook notify observers with notification in the terminal when book is borrowed or returned
+
+ 
+ ### Here are methods and how they work:
  ```bash
 getAllBooks()
  ```
@@ -77,15 +75,23 @@ getAllUsers()
  ```bash
 borrowBook()
  ```
- -Allows a user to borrow a book
+ - Allows a user to borrow a book
   ```bash
  extendLending()
  ```
- Extends the lending due date for a faculty member
-   ```bash
+ - Extends the lending due date for a faculty member
+  ```bash
  returnBook()
  ```
- Lets a user return a book
+-  Lets a user return a book
+```bash
+boolean userExists = users.stream().anyMatch(u -> u.getName().equals(name));
+if (!userExists) {
+    ...
+}
+
+ ```
+ - prevents Duplicate Users
 
 
 ## Class: Main 
@@ -102,24 +108,25 @@ initializeLibrary(LibrarySystem librarySystem)
  ```bash
 printBooks(LibrarySystem librarySystem)
  ```
--Prints a list of all books currently in the library.
+- Prints a list of all books currently in the library.
  ```bash
 printUsers(LibrarySystem librarySystem)
  ```
--Prints a list of all registered users in the system.
+- Prints a list of all registered users in the system.
  ```bash
 addNewUser(LibrarySystem librarySystem)
  ```
--Adds a new user to the library system via user input.
+- Adds a new user to the library system via user input.
  ```bash
 borrowBook(LibrarySystem librarySystem)
  ```
--Allows a user to borrow a book
+- Allows a user to borrow a book
  ```bash
 returnBook(LibrarySystem librarySystem)
  ```
--Lets a user return a book
--users need to add "return book" to return a book
+- Lets a user return a book
+- users need to add "return book" to return a book
+
 
 # How notifications work?
 
@@ -137,6 +144,11 @@ Inside it: notifyObservers("Anna has borrowed Little Women") is triggered
 All users (observers) receive this update via their update(String message) method
 
 The message is shown in the terminal.
+
+ ```bash
+Anna has borrowed Little Women
+ ```
+
 
 
 
