@@ -181,14 +181,14 @@ public class LibrarySystem extends Notify {
      * @return a list of string, each string contains the title and author of the book
      */
     public List<String> getAllBooks(){
-        List<String> formatedBooks = new ArrayList<>();
+        List<String> formattedBooks = new ArrayList<>();
         for(Book book: books){
             String authors = book.getAuthors().stream()
                             .map(Author::getName).collect(Collectors.joining(", "));
 
-            formatedBooks.add("Title: " + book.getTitle() + " Author: " + authors);
+            formattedBooks.add("Title: " + book.getTitle() + " Author: " + authors);
         }
-        return formatedBooks;
+        return formattedBooks;
     }
 
     /**
@@ -197,11 +197,11 @@ public class LibrarySystem extends Notify {
      * @return a list of string, each string contains the name of the user
      */
     public List<String> getAllUsers(){
-        List<String> formatedUsers = new ArrayList<>();
+        List<String> formattedUsers = new ArrayList<>();
         for(User user: users){
-            formatedUsers.add("Name: " + user.getName() );
+            formattedUsers.add("Name: " + user.getName() );
         }
-        return formatedUsers;    
+        return formattedUsers;    
     }
 }
 

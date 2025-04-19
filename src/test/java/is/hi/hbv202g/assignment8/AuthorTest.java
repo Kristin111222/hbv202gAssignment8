@@ -14,7 +14,7 @@ public class AuthorTest {
     }
 
     @Test
-    public void testAuthoSetName(){
+    public void testAuthorSetName(){
         Author author1 = new Author("test1");
 
         author1.setName("test2");
