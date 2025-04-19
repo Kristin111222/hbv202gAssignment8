@@ -57,11 +57,14 @@ public class LibrarySystem extends Notify {
      * @param feePaid feePaid wether the student has paid their fees
      */
     public void addStudentUser(String name, boolean feePaid){   
-        Student student = new Student(name, feePaid);
-        users.add(student);
-        if( student instanceof Observer){
-            attach((Observer) student);
-        }
+        boolean userExists = users.stream().anyMatch(u -> u.getName().equals(name));
+        if (!userExists) {
+            Student student = new Student(name, feePaid);
+            users.add(student);
+            if (student instanceof Observer) {
+                attach((Observer) student);
+            }
+    }
     }
 
     /**
@@ -71,11 +74,14 @@ public class LibrarySystem extends Notify {
      * @param department the department the faculty member belongs to
      */
     public void addFacultyMemberUser(String name, String department){   
-        FacultyMember facultyMember = new FacultyMember(name, department);
-        users.add(facultyMember);
-        if( facultyMember instanceof Observer){
-            attach((Observer) facultyMember);
-        }
+        boolean userExists = users.stream().anyMatch(u -> u.getName().equals(name));
+        if (!userExists) {
+            FacultyMember facultyMember = new FacultyMember(name, department);
+            users.add(facultyMember);
+            if (facultyMember instanceof Observer) {
+                attach((Observer) facultyMember);
+            }
+    }
     }
 
     /**

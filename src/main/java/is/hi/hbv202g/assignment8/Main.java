@@ -11,13 +11,14 @@ import java.util.stream.Collectors;
  * Provides a text-based interface for interacting with the library system.
  */
 public class Main {
-    /**
-     * The main method for the library management system.
-     * 
-     * @param args command line arguments
-     * @throws UserOrBookDoesNotExistException if user or book lookup fails
-     */
-    public static void main(String[] args) throws UserOrBookDoesNotExistException {
+        /**
+         * The main method for the library management system.
+         * 
+         * @param args command line arguments
+         * @throws UserOrBookDoesNotExistException if user or book lookup fails
+          * @throws EmptyAuthorListException if author list is empty
+          */
+         public static void main(String[] args) throws UserOrBookDoesNotExistException, EmptyAuthorListException {
         Scanner scanner = new Scanner(System.in);
         LibrarySystem myLibrarySystem = new LibrarySystem();
         Boolean running = true;
@@ -84,11 +85,11 @@ public class Main {
      * @param librarySystem the library system
      * @throws UserOrBookDoesNotExistException if book lookup fails
      */
-    public static void initializeLibrary(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException {
+    public static void initializeLibrary(LibrarySystem librarySystem) throws UserOrBookDoesNotExistException, EmptyAuthorListException {
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("Pride and Prejudice", "Jane Austen");
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("The Lord Of the Rings", "J.R.R.Tolkien");
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("Little Women", "Louisa May Alcott");
-
+        librarySystem.addBookWithTitleAndAuthorList("Let It Snow", Arrays.asList(new Author("John Green"), new Author("Maureen Johnson"), new Author("Lauren Myracle")));
     }
 
     /**
