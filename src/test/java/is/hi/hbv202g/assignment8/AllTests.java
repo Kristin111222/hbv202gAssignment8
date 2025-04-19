@@ -11,6 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
     FacultyMemberTest.class,
     LendingTest.class,
     LibrarySystemTest.class,
+    ObserverPatternTest.class,
     StudentTest.class,
     UserTest.class
  })
