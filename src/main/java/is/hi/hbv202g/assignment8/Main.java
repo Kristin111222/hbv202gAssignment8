@@ -23,6 +23,9 @@ public class Main {
         LibrarySystem myLibrarySystem = new LibrarySystem();
         Boolean running = true;
 
+        System.out.println("Welcome to the library management system!");
+        System.out.println("Type 'help' for a list of commands.");
+        
         while (running) {
             System.out.print("\n> ");
             String input = scanner.nextLine().trim().toLowerCase();
@@ -75,7 +78,10 @@ public class Main {
         System.out.println("show users - prints all users in the library");
         System.out.println("initialize library - adds three books to the library");
         System.out.println("add new user - adds a new user to the library");
+        System.out.println("add book - adds a new book to the library");
         System.out.println("borrow book - allows a user to borrow a book");
+        System.out.println("return book - allows a user to return a book");
+        System.out.println("extend lending - allows a user to extend a lending");
         System.out.println("exit - exits the program");
     }
 
